@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>symbols</title>
+</head>
+
+<body>
+    <script>
+        //symbols
+        /*caracteristica o propiedad de un objeto
+        no permite operador new
+        crea una referencia unica
+        mantiene los datos privado al usuario*/
+        let id = Symbol('a');
+        let id2 = Symbol('a');
+        const SALUDAR = Symbol('saludar');
+        console.log(id === id2, id, id2);
+
+
+        const NOMBRE = Symbol('nombre');
+        const NOMBRE2 = Symbol();
+        const persona = {
+            [NOMBRE]: 'Ale',     //imprime Object { Symbol(): "Ale"}
+            NOMBRE2: 'Ale2'     //imprime Object { NOMBRE2(): "Ale"}
+        }
+        persona.NOMBRE = 'alefalso';
+        persona[NOMBRE] = 'alesymbol2 ';
+        console.log(persona.NOMBRE, persona.NOMBRE2, persona[NOMBRE]);
+        //alefalso Ale2 alesymbol2
+        console.log(NOMBRE2, persona.NOMBRE2, persona[NOMBRE2]); //Symbol() Ale2 undefined
+
+        //no => function por que se eleva
+        persona[SALUDAR] = function () {
+            console.log('hola');
+        }
+        persona[SALUDAR]();
+        //imprimir el objeto si muestra los symbols
+        console.log(persona)
+
+        //los loops no muestran los symbols
+        for (propiedad in persona) {
+            console.log(propiedad, persona[propiedad])
+
+        }
+
+        //para mostrar los elementos symbols en un array
+        console.log(Object.getOwnPropertySymbols(persona))
+    </script>
+</body>
+
+</html>

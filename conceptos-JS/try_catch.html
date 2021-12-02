@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>try_catch</title>
+</head>
+
+<body>
+  <script>
+    //Sintaxis
+    try {
+      // Código a evaluar.
+      // throw: Lanza un error, catch {error} lo agarra. 
+    } catch (error) {
+      // Captura cualquier error surgido o lanzado en el try.
+    } finally {
+      // Se ejecuta sin importar la condición.
+    }
+
+
+
+    try {
+      let numero = '';
+
+      if (isNaN(numero)) {
+        throw new Error(`El  caracter introducido no es un numero: ${numero}`);
+      }
+
+      if (numero.length === 0) {
+        throw new Error("Numero no introducido")
+      }
+      console.log(numero * numero);
+
+    } catch (error) {
+      console.log(error);
+    } finally {
+      console.log("TryCatch realizado");
+    }
+
+
+    // finally tiene mayor prioridad sobre los otros bloques.
+    const tryFunction = () => {
+      try {
+        return 1;
+        throw 1;
+      } catch (error) {
+        return 2;
+      } finally {
+        return 3;
+      }
+    }
+    console.log(tryFunction());
+
+  </script>
+</body>
+
+</html>

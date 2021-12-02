@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if_operadorTernario_switch</title>
+</head>
+<script>
+    const saludoSegunHora = function (hora) {
+        if (hora >= 0 && hora < 6) {
+            return `Dejame dormir, son las ${hora} `
+        } else if (hora >= 6 && hora < 12) {
+            return `Buenos dias, son las ${hora} `
+        } else if (hora >= 12 && hora < 18) {
+            return `Buenas tardes, son las ${hora} `
+        } else if (hora >= 18) {
+            return `Buenas noches, son las ${hora} `
+        }
+    }
+    console.log(saludoSegunHora(6));
+
+    //Operador ternario 
+    //let var = condition
+    // ?sentenceTrue
+    //: sentenceFalse
+    let lang = 'js'
+    let isJsLang = (lang === 'js')
+
+
+    //cortocircuito OR
+    //retorna la segunda variable si la primera es false
+    console.log(false || true);
+
+    //cortocircuito AND
+    //retorna la primer variable si la primera es false
+    console.log(false && true);
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+/* Specificity
+!important
+online styles
+identifiers
+class
+pseudoclass
+attributes
+elements
+pseudoelements
+*/
+
+
+
+/* How fonts should degrade */
+p {
+  font-family: Helvetica, sans-serif;
+}
+
+
+
+/* block__tag--only one element to change*/
+.contact-form__input--active {
+  color: black;
+}
+
+
+
+/* use attribute selectors to style elements */
+[type="radio"] {
+  margin: 20px 0px 20px 0px;
+}
+
+
+
+/* Use a media query to change a variable */
+:root {
+  --penguin-size: 300px;
+  --penguin-skin: gray;
+  --penguin-belly: white;
+  --penguin-beak: orange;
+}
+
+@media (max-width: 350px) {
+  :root {
+    --penguin-size: 200px;
+  }
+}
+
+
+
+/*to put a father over a son, the son needs z-index: -1;*/
+.zIndexFather {
+  background: #25ccf7;
+  height: 100px;
+  width: 100px;
+  margin: 60px;
+  position: relative;
+}
+
+.zIndex__son {
+  background: #1b9cfc;
+  margin: -30px;
+  height: 100px;
+  width: 100px;
+  z-index: -1;
+  position: relative; /*height and width inherit it*/
+}
+
+
+
+/* Absolute
+The block size adjust equal to the content */
+
+
+
+/* Center a div without flex */
+.pos__box5abs {
+  height: 100px;
+  width: 100px;
+  background: #c44569;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}

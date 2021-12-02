@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>generators</title>
+</head>
+
+<body>
+    <script>
+        //convierte el codigo de una funcion en iterable
+        /*
+yield -> id[i]
+        function* id() {
+        yield sentence;
+            } */
+        function* iterable() {
+            yield 'hola1';
+            console.log('hola1/hola2')
+            yield 'hola2';
+            yield 'hola3';
+        }
+
+        //accede a Symbol.iterator() automaticamente
+        let iterador = iterable();
+        //si se usa un i.next() no se puede volver a mostrar en un for
+        // console.log(iterador.next());
+
+        for (const line of iterador) {
+            console.log(line)
+        }
+
+        const arr = [...iterable()];
+        console.log(arr);
+
+        //yield no espera al setTimeout
+        function cuadrado(valor) {
+            setTimeout(() => {
+                return ({
+                    valor,
+                    resultado: valor * valor
+                });
+            }, Math.random() * 1000);
+        }
+
+        function* generador() {
+            console.log('inicia generador');
+            yield cuadrado(0);
+            yield cuadrado(1);
+            yield cuadrado(2);
+            console.log('termina generador');
+        }
+
+        for (let y of generador()) {
+            console.log(y)
+        }
+    </script>
+</body>
+
+</html>

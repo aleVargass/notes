@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weaks</title>
+</head>
+
+<body>
+    <script>
+        /*
+        no iterables
+        no clear() method
+        no weak.size
+        const id = WeakSet([...{key:value}]);
+        key: object*/
+
+        //agregar valores
+        const ws = new WeakSet();
+        let value1 = { 'nombre': 'alejandro' };
+        ws.add(value1);
+
+        //weakset.has(key); 
+        //weakset.delete(key);
+
+        //garbage collector elimina una key nula o undefined
+        setInterval(() => console.log(ws), 1000);
+        setTimeout(() => {
+            // value1 = null; ? -> delete() method
+        }, 2000);
+
+
+
+        /*
+        const id = new WeakMap([...[{key:value}]]);
+        key: object*/
+
+        //asignar valores
+        const wm = new WeakMap([
+            [key1 = { 'nombre': 'alejandro' }],
+            [{ 'apellido': 'vargas' }]
+        ]);
+        const key3 = { 'edad': 19 };
+        wm.set(key3);
+
+        //weakmap.delete(key);
+        //weakmap.has(key);
+        //weakmap.set(key,value);
+        //weakmap.get(key);
+
+        setInterval(() => console.log(wm), 1000);
+        setTimeout(() => wm.delete(key1), 2000);
+    </script>
+</body>
+
+</html>

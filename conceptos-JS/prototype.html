@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+
+<body>
+    <script>
+        //las clases son semanticas por lo que se basan en prototipos
+        //UpperCamelCase para clases, es este caso es una funcion constructora
+        function SerHumamo(nombre, apellido) {
+            this.nombre = nombre;
+            this.apellido = apellido;
+        }
+
+        //metodos directo al prototipo de la funcion constructora
+        SerHumamo.prototype.saludar = function () {
+            return (`Hola, me llamo ${this.nombre} ${this.apellido}`)
+        }
+        //herencia prototipica
+        function Bebe(nombre, genero, nacimiento) { //params de Bebe
+            this.super = SerHumamo; //metodo contructor super de Bebe asignado a la funcion constructora SerHumano
+            this.super(nombre, genero); //params que recibe el metodo constructor super
+            this.nacimiento = nacimiento;
+        }
+        //instancia prototipica del objeto perro al constructor Animal
+        Bebe.prototype = new SerHumamo();
+        Bebe.prototype.constructor = Bebe;
+
+        //sobreescritura de metodos en Bebe
+        Bebe.prototype.saludar = function () {
+            return 'agua'
+        }
+        Bebe.prototype.llorar = function () {
+            return 'niaaa niaaa!!'
+        }
+
+        //instancias de la funcion constructora
+        const ale = new SerHumamo('Alejandro', 'Vargas'),
+            Lilia = new Bebe('Lilia', 'Vargas', '30/04/30');
+
+        console.log(ale)
+        console.log(ale.saludar());
+        console.log(Lilia);
+        console.log(Lilia.saludar());
+        console.log(Lilia.llorar());
+
+
+    </script>
+</body>
+
+</html>

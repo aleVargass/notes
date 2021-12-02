@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<script>
+    // metodos
+    const a = Array(5).fill(5); //array de 10 elementos con llenado con el num 5
+
+    // agrega elementos al final del arr y return a.lenght
+    a.push(4, 3);
+
+    //elimina arr[-1] y retorna a.lenght
+    a.pop();
+
+    //ejecuta la accion especificada por cada elemento en un arr
+    a.forEach(function (elem, i) {
+        console.log(`id: ${i} elemento: ${elem}`);
+    })
+
+
+
+    function quickCheck(arr, elem) {
+        return arr.indexOf(elem) >= 0 ? true : false;
+    }
+    console.log(quickCheck(["squash", "onions", "shallots"], "mushrooms"));
+
+
+
+    // Replace elementes with splice()
+    function htmlColorNames(arr) {
+        arr.splice(0, 2, "DarkSalmon", "BlanchedAlmond")
+        return arr;
+    }
+
+    console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
+
+
+
+    // Regresa un array con slice()
+    /**
+     * No incluye la extraccion
+     * No modifiica el array original
+    */
+    function forecast(arr) {
+        return arr.slice(2, 4);
+    }
+    console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+
+
+    // Copiar un array con el spread operator
+    function copyMachine(arr, num) {
+        let newArr = [];
+        while (num >= 1) {
+            newArr.push([...arr])
+            num--;
+        }
+        return newArr;
+    }
+    console.log(copyMachine([true, false, true], 2));
+
+
+
+    // Combinar arrays con el spread operator
+    function spreadOut() {
+        let fragment = ['to', 'code'];
+        let sentence = ["learning", ...fragment, "is", "fun"];
+        return sentence;
+    }
+    console.log(spreadOut());
+
+
+
+
+    // Filtrar un array 2D
+    function filteredArray(arr, elem) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].indexOf(elem) === -1) {
+                newArr.push(arr[i])
+            }
+        };
+        return newArr;
+    }
+    console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
+
+
+    //Deestructuracion
+    numeros = [1, 2, 3];
+    let [uno, dos, tres] = numeros;
+    console.log(uno, dos, tres);
+</script>
+
+<body>
+
+</body>
+
+</html>

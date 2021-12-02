@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>funciones</title>
+  <script>
+    //no usar console.log dentro de funciones
+    //Función declarada
+    //no usar funciones flecha dentro de objetos por hoisting
+    function funcionDeclarada() {
+      return `return de funcionDeclarada`
+    }
+    console.log(funcionDeclarada());
+
+    //Función expresada anonima
+    //asigna la funcion a una variable y puede no recibir nombre, no se puede invocar antes de declararla
+    //parametros por defecto
+    const funcionExpresada = function (a = null) {
+      return 'return de funcionExpresada';
+    }
+    console.log(funcionExpresada());
+
+    //funciones flecha
+    //1 params, no necesita ()
+    //1 linea, no necesita {}
+    const sumar = (a, b, ...c) => {
+      let res = a + b;
+      c.forEach(n => res += n);
+      return res
+    }
+    console.log(sumar(5, 10, 20, 30));
+
+
+
+
+    /**
+     * Funciones anonimas autoejecutables.
+     * Encapsula las variables dentro de la funcón.
+     * ; necesario al terminar la función.
+     */
+    (function (d, w, c) {
+      c.log('IIFE')
+    })(document, window, console);
+
+    //clasica
+    (function () {
+      return 'clasica'
+    })();
+
+    //crockford
+    ((function () {
+      return 'crockford'
+    })());
+
+    //unaria
+    +function () {
+      return 'unaria'
+    }();
+
+    //facebook
+    !function () {
+      return 'facebook'
+    }();
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

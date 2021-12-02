@@ -1,0 +1,175 @@
+/* float*/
+/* 
+    Does not actually use position.
+     Floating elements are removed from the normal flow of a document and pushed to either the left or right of their containing parent element.
+      It's commonly used with the width property to specify how much horizontal space the floated element requires. */
+#left {
+  float: left;
+  width: 50%;
+}
+#right {
+  float: right;
+  width: 40%;
+}
+
+/* box-shadow    */
+/* 
+    offset-x (how far to push the shadow horizontally from the element),
+    offset-y (how far to push the shadow vertically from the element),
+    blur-radius
+    spread-radius 
+    color */
+div {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* Center an Element Horizontally Using the margin Property */
+div {
+  background-color: blue;
+  height: 100px;
+  width: 100px;
+  margin: auto;
+}
+
+/* Create a Gradual CSS Linear Gradient */
+div {
+  border-radius: 20px;
+  width: 70%;
+  height: 400px;
+  margin: 50px auto;
+  background: linear-gradient(35deg, #ccffff, #ffcccc);
+}
+
+/* Create Texture by Adding a Subtle Pattern as a Background Image */
+body {
+  background: url(https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png);
+}
+
+/* transform: scale() */
+p {
+  transform: scale(2);
+}
+
+/* transform: skew() */
+p {
+  transform: skewX(-89.99deg);
+}
+
+/* Create a Graphic Using CSS */
+.center {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 25px 10px 0px 0px blue;
+}
+
+/* Create a More Complex Shape Using CSS and HTML */
+.heart {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: pink;
+  height: 50px;
+  width: 50px;
+  transform: rotate(-45deg);
+}
+.heart::after {
+  background-color: pink;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  left: 25px;
+}
+.heart::before {
+  content: "";
+  background-color: pink;
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 0px;
+}
+
+/* @keyframes */
+/* 
+    There are eight animation properties in total animation-name sets the name of the animation, which is later used by @keyframes to tell CSS which rules go with which animations. */
+#anim {
+  animation-name: colorful;
+  animation-duration: 3s;
+}
+
+@keyframes colorful {
+  0% {
+    background-color: blue;
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+
+/* animation-flil-mode */
+/* 
+     The animation-fill-mode specifies the style applied to an element when the animation has finished.  */
+#anim {
+  animation-fill-mode: forwards;
+}
+
+/* Create Movement Using CSS Animation */
+@keyframes rainbow {
+  0% {
+    background-color: blue;
+    top: 0px;
+  }
+  50% {
+    background-color: green;
+    top: 50px;
+  }
+  100% {
+    background-color: yellow;
+    top: 0px;
+  }
+}
+
+/* animation-iteration-count */
+#anim {
+  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
+}
+
+/* animation-timing-function */
+#ball1 {
+  left: 27%;
+  animation-timing-function: linear;
+}
+#ball2 {
+  left: 56%;
+  animation-timing-function: ease-out;
+}
+
+/* cubic-bezier */
+/* 
+    The cubic-bezier function consists of four main points that sit on this 1 by 1 grid: p0, p1, p2, and p3. p0 and p3 are set for you - they are the beginning and end points which are always located respectively at the origin (0, 0) and (1, 1).You set the x and y values for the other two points, and where you place them in the grid dictates the shape of the curve for the animation to follow. This is done in CSS by declaring the x and y values of the p1 and p2 "anchor" points in the form: (x1, y1, x2, y2). */
+#anim {
+  animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}
+
+/* Make Motion More Natural Using a Bezier Curve */
+#green {
+  background: green;
+  left: 75%;
+  animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+}

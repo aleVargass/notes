@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maps</title>
+</head>
+
+<body>
+    <script>
+        /*
+        const variable = new Map();
+        array.from(map)
+        tipo: object
+        i: array
+        keys: any*/
+
+        //declarar un objeto Map
+        const map1 = new Map();
+
+        //asignar valores
+        //como i es un array se puede declarar sus propiedades con []
+        //const id = new Map ([...[key,value]])
+        const map2 = new Map([
+            ['nombre', 'ale'],
+            ['apellido', 'vargas']
+        ])
+        //map.set('key:any,value:any');
+        map1.set('nombre', 'alejandro');
+        map1.set('apellido', 'vargas');
+        map1.set('edad', 19);
+
+        //obtener valores
+        //map.get(key)
+        map1.get('alejandro');
+
+        //eliminar valores
+        //map.delete(key);
+        map1.delete('nombre');
+
+        //i de map devuelve un Array,destructuracion para manejar por separado
+        for ([key, value] of map1) {
+            key, value;
+        }
+
+        //en un forEach el 1 parametro que recibe es el value
+        map1.forEach((value, key) => key, value)
+
+        //asignar keys o values
+        //const var = [...map.(keys() | values())]
+        const keysMap1 = [...map1.keys()],
+            valuesMap1 = [...map1.values()];
+    </script>
+</body>
+
+</html>

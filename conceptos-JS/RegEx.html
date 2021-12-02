@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegEx</title>
+</head>
+<script>
+  //expresión regular literal, no cambia el patrón a buscar, mejora el rendimiento
+  let re = /ab+c/;
+  //o llamando la función constructora del objeto RegExp
+  let re = new RegExp("ab+c");
+
+  /**
+   * sintaxis
+   * let identificador = new RegExp('patern','flags');
+   */
+
+  /** escapando
+  * para buscar a*b usarías /a\*b/, la barra invertida escapa de * volviendola literal en lugar de especial
+  * la barra invertida es un escape en los literales de cadena, por lo que usarlo en la expresión regular, debes escapar en el nivel del literal de cadena /a\*b/ y new RegExp("a\\*b"), que busca "a" seguida de un "*" literal seguido de "b"
+  * Para reconocer este caracter literalmente, escápalo consigo mismo. En otras palabras, para buscar \ usa /\\/  */
+
+  /** Clases de caracteres, distinguen tipos de caracteres.
+   * \.: Coincide con cualquier carácter único excepto terminadores de línea.
+   * \d: Busca cualquier dígito, equivalente a [0-9].
+   * \D: Busca cualquier caracter que no sea un digito.
+   * \w: Busca cualquier caracter alfanumérico del alfabeto latino básico, incluido el caracter de subrayado. Equivalente a [A-Za-z0-9_].
+   * \W: Busca cualquier caracter que no sea un caracter de palabra del alfabeto latino básico. Equivalente a [^A-Za-z0-9_].
+   * \s: Busca un solo caracter de espacio en blanco, incluido el espacio, tabulación, avance de página, avance de línea y otros espacios Unicode.*/
+
+  /**
+   * Cuantificadores, indican el número de caracteres o expresiones que deben coincidir.
+   * x*: 0 o más veces con el elemento "x" anterior.
+   * x+: Encuentra 1 o más veces el elemento "x" anterior Equivalente a {1,}.
+   * x?: Halla 0 o 1 vez el elemento "x" anterior.
+   * x{n}: Concuerda exactamente con "n" apariciones del elemento.
+   * x{n,}: Concuerda con al menos "n" apariciones.
+  */
+
+  /**
+   * Aserciones, incluyen límites que indican el comienzo y final de líneas o palabras y otros patrones que indican de alguna manera que el reconocimiento es posible
+   * ^: Coincide con el comienzo de la entrada.
+   * $: Coincide con el final de la entrada.
+   * \b: Marca el límite de una palabra.
+   * \B: Coincide con un límite sin palabra.
+  */
+
+  /**
+   * x|y: Coincide con "x" o "y".
+   * [a-z]: Coincide con cualquiera de los caracteres incluidos.
+   * [^abc]: Juego de caracteres negado.
+  */
+
+  /* flags, son parte integral de una regex, no se pueden eliminar más tarde
+  * g: Busqueda global.
+  * i: No distingue entre mayúsculas y minúsculas.
+  */
+
+  /**
+   * métodos
+   * test(): Devuelve un arreglo de información o null en una discrepancia.
+   * exec(): Devuele true o false.
+  */
+
+  let lorem = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt amet maiores cupiditate eligendi optio harum odio delectus placeat veritatis provident ab possimus asperiores dolore soluta cumque, aliquam nam tempora facere?'
+
+  let regexp1 = new RegExp('el', 'g');
+  console.log(regexp1.test(lorem));
+  console.log(regexp1.exec(lorem));
+
+  /* {}: ocurrencias dentro de la cadena
+  []: rangos
+  d: digits
+  D: no digits
+  s: space
+  S: no space */
+  let regexp2 = / /
+  console.log(regexp2.test(lorem))
+  console.log(regexp2.exec(lorem))
+</script>
+
+<body>
+</body>
+
+</html>

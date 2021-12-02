@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sets</title>
+</head>
+
+<body>
+    <script>
+        /*
+        valores unicos
+        se trata como objeto
+        se tiene que pasar a arr para poder manejar sus indices ?*/
+
+        //recibe un elemento iterable [] y el paramentro new
+        // new Set(iterable)
+        const set1 = new Set([1, 2, 3, 4, 5, 5, 6, {}, 7, {}]);
+
+        //para agregar elementos al set utlizamos el metodo add 
+        //set.add(element)
+        set1.add(8);
+
+        //largo del set
+        //set.size
+        set1.size;
+
+        //itera sobre los valores del set
+        set1.forEach(value => value)
+
+        //para acceder al indice de un set se pasa a un objeto Array
+        //Array.from(set)
+        let arr = Array.from(set1);
+        arr[5];
+
+        //borra el elemento que se le pasa como argumento
+        //set.delete(element);
+        set1.delete(7);
+
+        //evalua si el set tiene un elemento
+        //set.has(element);
+        set1.has(5);
+
+        //vacia el set
+        //set.clear();
+        set1.clear();
+    </script>
+</body>
+
+</html>

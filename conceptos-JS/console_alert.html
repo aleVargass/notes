@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>console</title>
+</head>
+<script>
+    console.log(console);
+    console.table(Object.entries(console).sort());
+    console.dir(document); //muestra propiedas y funciones de un objeto
+    console.clear();
+
+    console.time('time: '); //etiqueta del time
+    const arr = Array(1000000); //un arr de 1 millon de posiciones
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = i
+    }
+    console.timeEnd('time: ');
+
+    //count cuantas veces se ejecuto un codigo
+    for (let i = 0; i < 10; i++) {
+        console.count('iteracion');
+        console.log(i)
+    }
+
+    //assert revisa si una condicion se cumpla
+    let x = 3,
+        y = 2;
+    pruebaXY = 'Se espera que x sea menor que y';
+    console.assert(x < y, { x, y, pruebaXY });
+    console.assert(x < y, pruebaXY);
+
+
+
+    //alert,confirm, prompt no necesitan el objeto window para utilizarse
+
+    alert('Bienvenido:)');
+    let confirmacion = confirm('Para seguir navegando en esta pagina se utlizan cookies para seguridad'); //if aceptar return true, else if cancelar return false
+    let aviso = ('Nombre: '); //guarda el valor dentro del input else null
+
+</script>
+
+<body>
+
+</body>
+
+</html>

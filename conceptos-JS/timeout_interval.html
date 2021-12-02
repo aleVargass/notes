@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia</title>
+</head>
+
+<body>
+    <script>
+        let varTimeout = setTimeout(() => {
+            console.log('despues de 5s aparece este mensaje y se detiene el setInterval')
+            clearInterval(varInterval)
+        }, 5000);
+
+        let varInterval = setInterval(() => {
+            console.log(new Date().toLocaleTimeString())
+        }, 2000);
+
+        //detienen el setInterval y el setTimeout pero al comentarlos se cancelan
+        // clearInterval(varInterval)
+        // clearTimeout(varTimeout);
+
+        //el siguiente codigo es asincrono no-bloqueante gracias a las funciones setTimeout y setInterval
+        /*
+        console.log(0)
+        function dos() {
+            setTimeout(() => {
+                console.log(2)
+            }, 1000);
+        }
+
+        function uno() {
+            setTimeout(() => {
+                console.log(1)
+            }, 0);
+            dos()
+            console.log(3)
+        }
+        uno()
+        console.log('fin')
+*/
+    </script>
+</body>
+
+</html>

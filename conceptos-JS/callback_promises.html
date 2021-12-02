@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>callbacks_promises</title>
+</head>
+
+<body>
+  <script>
+    // recursivadad: Una función se invoca a si misma dentro de si, eso es lo que me generara el callback
+    //simulara la asincronia - ese ir y consultar una api externa
+    //esto simulara el manejo de ajax o al consumo de datos a traves de un API o de archivos externos
+    //Una función de callback es una función que se pasa a otra función como un argumento, que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción
+    //normalmente el callback es una funcion externa que despues completa a la funcion
+    //callbacks hell
+    //el manejo de errores lo tendrias que manejar individualmente
+    function cuadradoCallback(value, callback) {
+      setTimeout(() => {
+        callback(value, value * value);
+      }, 0 | Math.random() * 1000);
+    }
+
+    cuadradoCallback(0, (value, resultado) => {
+      console.log("Inicia Callback");
+      console.log(`Callback ${value}, ${resultado}`)
+      cuadradoCallback(1, (value, resultado) => {
+        console.log(`Callback ${value}, ${resultado}`)
+        cuadradoCallback(2, (value, resultado) => {
+          console.log(`Callback ${value}, ${resultado}`)
+          cuadradoCallback(3, (value, resultado) => {
+            console.log(`Callback ${value}, ${resultado}`)
+            cuadradoCallback(4, (value, resultado) => {
+              console.log(`Callback ${value}, ${resultado}`)
+
+            });
+          });
+        });
+      });
+    });
+
+    /*function saludar(nombre) {
+        alert('Hola ' + nombre);
+    }
+
+    function procesarEntradaUsuario(callback) {
+        var nombre = prompt('Por favor ingresa tu nombre.');
+        callback(nombre);
+    }
+
+    procesarEntradaUsuario(saludar);*/
+
+    //promises
+    //manipulan el manejo de errores en general
+    //convienen cuando se tienen varios procesos asincronos
+    function cuadradoPromise(value) {
+      if (typeof (value) !== 'number') return Promise.reject(`Error ,el valor ingresado ${value} no es un numero`);
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({
+            value,
+            result: value * value
+          });
+        }, 0 | Math.random() * 1000);
+      });
+    }
+
+    cuadradoPromise(0)
+      .then(obj => {
+        console.log(`Promise: ${obj.value}, ${obj.result}`);
+        return cuadradoPromise(1);
+      })
+      .then(obj => {
+        console.log(`Promise: ${obj.value}, ${obj.result}`);
+        return cuadradoPromise(2);
+      })
+      .then(obj => {
+        console.log(`Promise: ${obj.value}, ${obj.result}`);
+        return cuadradoPromise(3);
+      })
+      .then(obj => {
+        console.log(`Promise: ${obj.value}, ${obj.result}`);
+        return cuadradoPromise(4);
+      })
+      .then(obj => {
+        console.log(`Promise: ${obj.value}, ${obj.result}`);
+        return cuadradoPromise(5);
+      })
+      .then(obj => {
+        console.log(`Promise: ${obj.value}, ${obj.result}`);
+        console.log('fin Promise')
+      })
+      .catch(err => console.error(err));
+
+
+    
+    let name = "alejandro";
+
+    const promise = new Promise((revolve, reject) => {
+      if (nombre !== "alejandro") {
+        reject("El nombre no es alejandro");
+      } else {
+        resolve(nombre);
+      }
+    })
+
+    // Se pasa a arrowFunction los argumentos de la promise ya que los datos están encapsulados.
+    promise.then(result => {
+      console.log(result);
+    }).catch(e => {
+      console.log(e);
+    })
+  </script>
+</body>
+
+</html>

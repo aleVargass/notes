@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<script>
+    //creacion de clases
+    class Animal {
+        constructor(nombre, genero) {
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+        beber() {
+            return `${this.nombre} esta bebiendo agua, glup glup`
+        }
+    }
+
+    class Perro extends Animal {
+        constructor(nombre, genero, tamano) {
+            super(nombre, genero); //params que toma de la clase padre
+            this.tamano = tamano;
+            //para getter/setter
+            this.raza = null;
+        }
+
+        ladrar() {
+            return `${this.nombre} esta ladrando, woof! woof!`
+        }
+
+        //los metodos estaticos no necesitan instancias,ya que se pueden invocar desde la clase
+        static info() {
+            return 'Los perros con cuadrupedos carnivoros, de naturaleza salvaje si no se les domestican...'
+        }
+
+        //getters y setters
+        //js los trabaja como propiedades 
+        get getRaza() {
+            return this.raza
+        }
+
+        set setRaza(raza) {
+            this.raza = raza;
+        }
+    }
+
+    //instancias
+    const gato = new Animal('tigre', 'macho'),
+        olga = new Perro('olga', 'hembra', 'grande');
+
+    //invocaciones
+    console.log(gato);
+    console.log(olga);
+    console.log(gato.beber());
+    console.log(Perro.info());
+    console.log(olga.ladrar());
+    console.log(olga.beber());
+    olga.setRaza = 'Pitbull';
+    console.log(olga.getRaza);
+
+    //no hay clases privadas, protected en js
+</script>
+
+<body>
+
+</body>
+
+</html>

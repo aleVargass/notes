@@ -1,0 +1,74 @@
+<!-- Wrap Radio Buttons in a fieldset Element for Better Accessibility -->
+<!--
+    The fieldset tag surrounds the entire grouping of radio buttons to indicate theres a way to semanticallly show the choices are part of a set.
+     It often uses a legend tag to provide a description for the grouping, which screen readers read for each choice in the fieldset element.
+    The fieldset wrapper and legend tag are not necessary when the choices are self-explanatory, like a gender selection. Using a label with the for attribute for each radio button is sufficient.-->
+<form>
+    <fieldset>
+        <legend>Choose one of these three items:</legend>
+        <input id="one" type="radio" name="items" value="one">
+        <label for="one">Choice One</label><br>
+        <input id="two" type="radio" name="items" value="two">
+        <label for="two">Choice Two</label><br>
+        <input id="three" type="radio" name="items" value="three">
+        <label for="three">Choice Three</label>
+    </fieldset>
+</form>
+
+
+
+<!-- Add an Accessible Date Picker -->
+<form>
+    <p>Tell us the best date for the competition</p>
+    <label for="pickdate">Preferred Date:</label>
+    <input type="date" id="pickdate" name="date">
+    <input type="submit" name="submit" value="Submit">
+</form>
+&copy;
+
+
+
+<!-- Standardize Times with the HTML5 datetime Attribute -->
+<p><time datetime="2016-09-15">Thursday, September 15<sup>th</sup></time>.</p>
+
+
+
+<!-- Make Elements Only Visible to a Screen Reader by Using Custom CSS -->
+<!-- 
+    Information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window -->
+<!-- 
+    display: none; or visibility: hidden; hides content for everyone, including screen reader users
+    Zero values for pixel sizes, such as width: 0px; height: 0px; removes that element from the flow of your document, meaning screen readers will ignore it -->
+<style>
+    .sr-only {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        top: auto;
+        overflow: hidden;
+    }
+</style>
+
+
+
+<!-- Improve Readability with High Contrast Text -->
+<!-- 
+    The Web Content Accessibility Guidelines (WCAG) recommend at least a 4.5 to 1 contrast ratio for normal text. The ratio is calculated by comparing the relative luminance values of two colors. This ranges from 1:1 for the same color, or no contrast, to 21:1 for white against black, the most substantial contrast. There are many contrast checking tools available online that calculate this ratio for you. -->
+
+
+
+<!-- Make Links Navigable with HTML Access Keys -->
+<!-- 
+    HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls. -->
+<button accesskey="b">Important Button</button>
+
+
+
+<!-- Use tabindex to Add Keyboard Focus to an Element -->
+<!-- 
+    When it's on a tag, it indicates that the element can be focused on
+    Certain elements, such as links and form controls, automatically receive keyboard focus when a user tabs through a page. 
+    It's in the same order as the elements come in the HTML source markup. This same functionality can be given to other elements, such as div, span, and p, by placing a tabindex="0" attribute on them.
+ -->
+<div tabindex="0">I need keyboard focus!</div>

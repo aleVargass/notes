@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+
+<body>
+    <script>
+        //this
+        /*
+        let X this */
+        this.name = 'global';
+        function imprimir() {
+            console.log(this.name);
+        }
+        imprimir()
+
+        const obj = {
+            name: 'objeto',
+            imprimir
+        }
+        obj.imprimir()
+
+        //arrow functions hoisting itself
+        const obj3 = {
+            name: ' objeto',
+            imprimir: () => {
+                console.log(this.name)
+            }
+        }
+
+        obj3.imprimir();
+
+        //con function anonima imprimiria global ya que como genera scope y no detecta ningun this.nombre dentro de ella
+        function Person(name) {
+            this.name = name;
+            return () => {
+                console.log(this.name);
+            }
+        }
+        let ale2 = new Person('ale');
+        ale2();
+
+
+
+        //call,apply
+        /*
+        function.call(object, params)
+        object -> take context
+        object === null -> global context
+
+        function.apply(object, [params])
+        */
+
+        this.lugar = 'global';
+        function saludar(saludo, aQuien) {
+            console.log(`${this.lugar}`)
+        }
+        saludar('hola', 'olga');
+
+        const obj2 = {
+            lugar: 'objeto'
+        }
+
+        saludar.call(obj2, 'hola', 'ale')
+        saludar.apply(obj2, ['hola', 'ale'])
+
+        //bind
+        /*
+        link a context of a object to another
+        function.bind(object)
+        */
+        const persona = {
+            nombre: 'ale',
+            saludar: function () {
+                console.log(`hola ${this.nombre}`);
+            }
+        }
+
+        const otraPersona = {
+            saludar: persona.saludar.bind(persona)
+        }
+        otraPersona.saludar();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+/* Create a Media Query */
+@media (max-width: 100px) {
+  /* CSS Rules */
+}
+@media (min-height: 350px) {
+  /* CSS Rules */
+}
+
+/* Make a Img responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Use a Retina Image for Higher Resolution Displays */
+/* 
+    The most famous such display is the one known as a "Retina Display" on the latest Apple MacBook Pro notebooks, and recently iMac computers. Due to the difference in pixel density between a "Retina" and "Non-Retina" displays, some images that have not been made with a High-Resolution Display in mind could look "pixelated" when rendered on a High-Resolution display.
+    The simplest way to make your images properly appear on High-Resolution Displays, such as the MacBook Pros "retina display" is to define their width and height values as only half of what the original file is.  */
+
+img {
+  height: 250px;
+  width: 250px;
+}
+/* <img src="coolPic500x500" alt="A most excellent picture"> Html code, not a comment*/
+
+/* Make Typography Responsive */
+/* 
+Instead of using em or px to size text, you can use viewport units for responsive typography. Viewport units, like percentages, are relative units, but they are based off different items. Viewport units are relative to the viewport dimensions (width or height) of a device, and percentages are relative to the size of the parent container element.
+    vw (viewport width): 10vw would be 10% of the viewport's width.
+    vh (viewport height): 3vh would be 3% of the viewport's height.
+    vmin (viewport minimum): 70vmin would be 70% of the viewport's smaller dimension (height or width).
+    vmax (viewport maximum): 100vmax would be 100% of the viewport's bigger dimension (height or width). */
+h2 {
+  width: 80vw;
+}
+p {
+  width: 75vmin;
+}

@@ -1,0 +1,21 @@
+{
+  "1": "Las propiedades del objeto también deben estar entre comillas.",
+  "2": "También pueden haber objetos y arrays.",
+  "parse()": "Convierte un string con estructura JSON a formato JSON (deserializar).",
+  "stringify()": "Convierte un objeto JSON en string",
+  "name": "Alejandro",
+  "age": "19",
+  "cel": "9221907955",
+  "hobbies": [
+    "program",
+    "videogames",
+    "run",
+    "read"
+  ],
+  "job": {
+    "job": "casher",
+    "job_desire": "soft_developer"
+  },
+  "3": "Para mandar valores nulos también es entre comillas",
+  "nulo": "nulo"
+}
