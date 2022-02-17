@@ -3,7 +3,6 @@
 // filter()
 /* brackets if are 2+ args */
 function getRating(watchList) {
-  // Only change code below this line
   let count = 0;
   const averageRating = watchList.filter(movie =>
     movie["Director"] === "Christopher Nolan"
@@ -12,7 +11,6 @@ function getRating(watchList) {
     count++;
     return sum + parseFloat(rating)}, 0) / count;
   
-  // Only change code above this line
   return averageRating
 }
 
