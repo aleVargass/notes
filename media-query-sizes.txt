@@ -1,0 +1,3 @@
+prefers-less-constrast
+pointer
+prefers-reduced-motion

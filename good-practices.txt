@@ -1,0 +1,50 @@
+estructura:	index.html
+		images/
+		styles/
+		scripts/
+
+archivos: 	Guiones en vez de espacios.
+	  	Minusculas o camelCase.
+	  	Nombres del archivo tienen que ser descriptivos.
+
+text: 		Un h1 por página.
+
+id: 		Los identificadores deben ser únicos.
+
+a:		rel="noopener" siempre que haya target="_blank".
+
+label: 		Valor del atributo for igual que el id del elemento, para tecnologías asistivas.
+
+url		Direcciones descriptivas para el seo.
+		Utilizar links relativos siempre que se pueda.
+		Indicar los recursos no HTML
+
+u:		Son elementos semanticos por lo que hay que tener cuidado.
+		Se puede confundir con un link.
+
+imgs: 		Mantener las imgs dentro de tu mismo servidor HTML en vez de hacer hotlinking.
+		Tener siempre atributo alt.
+		Asignar ancho y largo para que le reserve un espacio en el DOM.
+		attributo title? se puede reemplazar por el figcaption.
+		Utilizar figure y figcaption.
+		Colocar en el archivo HTML si tiene significado en términos del contenido de tu página o en el de CSS si es decorativa.
+
+svg:		Se adapta mejor al css.
+		svg en linea.
+
+iframes:	attributes src en JS para que cargue la pag primero.
+
+copyright:	Filtrar en la busqueda de reuse.
+		Marca de agua.
+		Ver su SERP (search engine results page)
+
+eventos:	Delegar el evento a un elemento externo.	
+
+
+Etiqueta time con atributo datetime para las tecnologías asistivas cuando se utiliza un formato de fecha.
+Etiqueta fieldset para envolver un grupo de radio buttons y una etiqueta legend por si no es instintivo para el usuario.
+Para los screenReaders el elemento no se debe quitar del flujo ya que las techAsistive no lo detectan, es decir, no hay que usar display:none;, visibility:hidden;, width/height:0;.
+accesskey, 
+tabindex: Habilita la pseudo-clase :focus
+tabindex="-1":  Este método se usa generalmente para enfocar el contenido de manera programática.
+hr: Línea horizontal a través de la página	

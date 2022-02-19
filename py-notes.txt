@@ -1,0 +1,48 @@
+factorials
+
+sequence of a triangle   --> n * (n+1) / 2
+sequence of a rectangle  --> n * (n+1)
+ceil operation		 --> -(-n//5)
+	this works in py 2 because a floating number isn't a number itself, else a representation
+
+
+
+_________________________________________________
+
+bitwise operator 
+
+shift n to the left m times
+n << m == n*2**m
+
+
+________________________________________________
+the same in substraction
+
+	a-b or b-a == abs(a-b)
+
+
+________________________________________________________________
+check if there is one of various i in a lst
+
+	return -- if any(i in lst_to_be_checked for i in lst_of_elements) else --
+
+
+_________________________________________
+
+', '.join(i+j for i in '123456' for j in 'abcde') 
+
+-->
+
+	s = ''
+	for i in range(1,7):
+		for j in ["a", "b", "c", "d", "e"]:
+			s += str(i)+j+', '
+	return s[:-2]
+
+
+__________________
+
+add a lst between two values
+
+	lst1[1:1] = lst2
+	return lst1
