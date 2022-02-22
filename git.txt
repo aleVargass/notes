@@ -1,14 +1,9 @@
-git clone [LINK]
-	Fork a repo from a server to the current dir
+git init - initialize a git directory
+git clone [LINK] - fork a repo from a server to the current dir
+git status - show the status of the files
+git add [FILE] - add files contents to the index
 
-git status
-	Show the status of the files
-
-git add [FILE]
-	Add files contents to the index
-	. - Modified and untracked files.
-
-git commit -m [MSG] -m [MSG]	
+git commit -m [MSG]
 	-a, dont need to specify the file, only modified files		
 	Commit your files to .git
 
@@ -21,9 +16,7 @@ git push [opt] [ORIGIN] [MASTER]
 	--delete [branch]
 git push origin --delete [branch]
 
-git init
-	Initialize a git directory
-	.git is a dir who saves the commits
+
 
 git remote add origin [sshRepo]
 	Create a remote repository
