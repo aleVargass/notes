@@ -1,0 +1,56 @@
+git init - initialize a git directory
+git clone [LINK] - fork a repo from a server to the current dir
+git status - show the status of the files
+git add [FILE] - add files contents to the index
+
+git commit -m [MSG]
+	-a, dont need to specify the file, only modified files		
+	Commit your files to .git
+
+git push [opt] [ORIGIN] [MASTER]			
+	Push your .git dir to github, i dont have to put "origin master", cuz asks my password
+	-u, set-upstream branch
+	origin, Indicate the repository
+	master, Indicate the master branch
+	remote, Indicate that is remote repository
+	--delete [branch]
+git push origin --delete [branch]
+
+
+
+git remote add origin [sshRepo]
+	Create a remote repository
+
+git remote -v 
+	Check the remote repo created
+
+git branch [opt] [branch]
+	Show the branchs
+	options
+	-d, delete
+
+git checkout [BRANCH]
+	Switch branches
+	-d, delete
+	-B, new branch
+
+git diff [BRANCH]
+	Show the differences
+
+git pull 
+	Pull all the changes in a branch
+
+git reset 
+	HEAD~1, Return to the num commit unstaged
+	--hard [hashCommit], Return to the commit staged
+
+git log 
+	Show the commits
+
+git merge [branch]
+	May occur a merge conflict
+
+falto hacer un pull request desde git
+
+Borrar un repo local
+rm -fr .git
