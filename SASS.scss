@@ -1,0 +1,145 @@
+// Store Data with Sass VariablesPassed
+// In Sass, variables start with a $ followed by the variable name.
+
+$main-fonts: Arial, sans-serif;
+$headings-color: green;
+
+h1 {
+  font-family: $main-fonts;
+  color: $headings-color;
+}
+
+// Nest CSS with Sass
+// Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
+// - For a large project.
+
+nav {
+  background-color: red;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+// Create Reusable CSS with Mixins
+// In Sass, a mixin is a group of CSS declarations that can be reused throughout the style sheet.
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+#awesome {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  @include border-radius(15px);
+}
+
+// Use @if and @else to Add Logic To Your Styles
+// The @if directive in Sass is useful to test for a specific case and just like in JavaScript, @else if and @else test for more conditions:
+
+@mixin border-stroke($val) {
+  @if $val == light {
+    border: 1px solid black;
+  } @else if $val == medium {
+    border: 3px solid black;
+  } @else if $val == heavy {
+    border: 6px solid black;
+  } @else {
+    border: none;
+  }
+}
+
+#box {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  @include border-stroke(medium);
+}
+
+// Use @for to Create a Sass Loop
+// The @for directive adds styles in a loop. @for is used in two ways: "start through end" or "start to end". The main difference is that the "start to end" excludes the end number as part of the count, and "start through end" includes the end number as part of the count.
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: 100%/12 * $i;
+  }
+}
+
+@for $j from 1 to 6 {
+  .text-#{$j} {
+    font-size: 15px * $j;
+  }
+}
+// The #{$i} part is the syntax to combine a variable (i) with text to make a string. When the Sass file is converted to CSS, it looks like this:
+
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+// Use @each to Map Over Items in a List.
+// Sass also offers the @each directive which loops over each item in a list or map.
+@each $color in blue, red, green {
+  .#{$color}-text {
+    color: $color;
+  }
+}
+
+$colors: (
+  color1: blue,
+  color2: red,
+  color3: green,
+);
+
+// $key variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have color1, color2... in it.
+@each $key, $color in $colors {
+  .#{$color}-text {
+    color: $color;
+  }
+}
+
+// Apply a Style Until a Condition is Met with @while
+// It creates CSS rules until a condition is met.
+$i: 1;
+@while $i < 6 {
+  .text-#{$i} {
+    font-size: 15px * $i;
+  }
+  $i: $i + 1;
+}
+
+// Split Your Styles into Smaller Chunks with Partials
+// Partials in Sass are separate files that hold segments of CSS code. These are imported and used in other Sass files.
+// Names for partials start with the underscore (_) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file
+// For example, if all your mixins are saved in a partial named "_mixins.scss", and they are needed in the "main.scss" file, this is how to use them in the main file:
+// Note that the underscore and file extension are not needed in the import statement - Sass understands it is a partial.
+@import "mixins";
+
+// Extend One Set of CSS Styles to Another Element
+// Sass has a feature called extend that makes it easy to borrow the CSS rules from one element and build upon them in another.
+// The extend directive is a simple way to reuse the rules written for one element
+.info {
+  width: 200px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.info-important {
+  @extend .info;
+  background-color: magenta;
+}
