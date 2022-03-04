@@ -1,0 +1,177 @@
+// variables
+// variables start with a $ followed by the variable name.
+$main-fonts: Arial, sans-serif;
+$headings-color: green;
+
+h1 {
+  font-family: $main-fonts;
+  color: $headings-color;
+}
+
+
+
+
+
+// nest CSS
+nav {
+  background-color: red;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+
+
+
+
+// mixins, reusable css
+  // is a group of CSS declarations that can be reused throughout the style sheet.
+  // @mixin to initialize a mixin
+  // @include to call the mixin
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+#awesome {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  @include border-radius(15px);
+}
+
+
+
+
+
+// @if, @else if, @else
+  // parenthesis unnecessary
+  // cant ===
+  // can't if one line
+  // ; necesarry
+
+@mixin border-stroke($val) {
+  @if $val == light {
+    border: 1px solid black;
+  } @else if $val == medium {
+    border: 3px solid black;
+  } @else if $val == heavy {
+    border: 6px solid black;
+  } @else {
+    border: none;
+  }
+}
+
+#box {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  @include border-stroke(medium);
+}
+
+
+
+
+
+// @for 
+  // "start to end" excludes the end number as part of the count
+  // "start through end" includes the end number as part of the count.
+  // px units unneccesary
+  // 
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: 100%/12 * $i;
+  }
+}
+
+@for $j from 1 to 6 {
+  .text-#{$j} {
+    font-size: 15 * $j;
+  }
+}
+  // The #{$i} part is the syntax to combine a variable (i) with text to make a string
+  // When the Sass file is converted to CSS, it looks like this:
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+
+
+
+
+// @each
+@each $color in blue, red, green {
+  .#{$color}-text {
+    color: $color;
+  }
+}
+
+// through a map
+$colors: (
+  color1: blue,
+  color2: red,
+  color3: green,
+);
+
+@each $key, $color in $colors {
+  .#{$color}-text {
+    color: $color;
+  }
+}
+
+
+
+
+
+// @while
+  // it creates CSS rules until a condition is met.
+$i: 1;
+@while $i < 6 {
+  .text-#{$i} {
+    font-size: 15 * $i;
+  }
+  $i: $i + 1;
+}
+
+
+
+
+
+// partials, @import
+// separate files that hold segments of CSS code, these are imported and used in other Scss files.
+// names for partials starts (_) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file
+// underscore and file extension are not needed in the import statement
+// the file to bring is "_mixins.scss"
+@import "mixins";
+
+
+
+
+
+// @extend
+// copy the CSS rules
+.info {
+  width: 200px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.info-important {
+  @extend .info;
+  background-color: magenta;
+}
