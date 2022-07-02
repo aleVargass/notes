@@ -1,56 +1,70 @@
-git init - initialize a git directory
-git clone [LINK] - fork a repo from a server to the current dir
-git status - show the status of the files
-git add [FILE] - add files contents to the index
+GLOSSARY
+--							Do not interprete any more arguments as options
 
-git commit -m [MSG]
+OPTIONS
+-f, --force 				
+-n, --dry-run
+-v, --verbose
+-h, --help
+-r							allow recursive
+
+COMMAND						USAGE															EXAMPLE
+--help						Show help
+--version					Show version
+clone <repo>				Clone a repo into a new dir
+init	 					Create am empty Git repo or reinitialize an existing one
+
+add [<pathspec>] 			Add file contents to the index									add Documentation/\*.txt
+mv <source> <destination>	Move or rename a file, dir or symlink
+restore <pathspec>			Restore working tree files										git restore hello.c
+rm [-nfr] <pathspec>...		Remove files from the working tree and from the index			rm Documentation/\*.txt | .git
+
+bisect
+diff
+grep
+log							Show the commits
+show
+status - Show the status of the files
+
+branch
+commit -m [MSG]
 	-a, dont need to specify the file, only modified files		
 	Commit your files to .git
+merge
+rebase
+reset
+switch
+tag
 
-git push [opt] [ORIGIN] [MASTER]			
-	Push your .git dir to github, i dont have to put "origin master", cuz asks my password
+fetch
+pull 						Pull all the changes in the branch
+push [opt] [ORIGIN] [MASTER]			
+	Push your .git dir to github
 	-u, set-upstream branch
 	origin, Indicate the repository
 	master, Indicate the master branch
-	remote, Indicate that is remote repository
 	--delete [branch]
-git push origin --delete [branch]
 
+push origin --delete [branch]
 
+remote add origin [repo]
 
-git remote add origin [sshRepo]
-	Create a remote repository
-
-git remote -v 
-	Check the remote repo created
-
-git branch [opt] [branch]
-	Show the branchs
+ branch [opt] [branch]
+	Show branches
 	options
 	-d, delete
 
-git checkout [BRANCH]
+ checkout [BRANCH]
 	Switch branches
 	-d, delete
 	-B, new branch
 
-git diff [BRANCH]
+ diff [BRANCH]
 	Show the differences
 
-git pull 
-	Pull all the changes in a branch
-
-git reset 
+ reset 
 	HEAD~1, Return to the num commit unstaged
 	--hard [hashCommit], Return to the commit staged
 
-git log 
-	Show the commits
-
-git merge [branch]
-	May occur a merge conflict
-
-falto hacer un pull request desde git
-
-Borrar un repo local
-rm -fr .git
+merge [branch] - May occur a merge conflict
+branch -m <actualBranch> <newBranch>	Rename a branch

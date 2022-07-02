@@ -1,0 +1,165 @@
+h1 {
+  font-family: Arial, sans-serif;
+  color: green;
+}
+
+nav {
+  background-color: red;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+#awesome {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  border-radius: 15px;
+}
+
+#box {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  border: 3px solid black;
+}
+
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33333%;
+}
+
+.col-5 {
+  width: 41.66667%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33333%;
+}
+
+.col-8 {
+  width: 66.66667%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33333%;
+}
+
+.col-11 {
+  width: 91.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.text-1 {
+  font-size: 15;
+}
+
+.text-2 {
+  font-size: 30;
+}
+
+.text-3 {
+  font-size: 45;
+}
+
+.text-4 {
+  font-size: 60;
+}
+
+.text-5 {
+  font-size: 75;
+}
+
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.text-1 {
+  font-size: 15;
+}
+
+.text-2 {
+  font-size: 30;
+}
+
+.text-3 {
+  font-size: 45;
+}
+
+.text-4 {
+  font-size: 60;
+}
+
+.text-5 {
+  font-size: 75;
+}
+
+.info, .info-important {
+  width: 200px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.info-important {
+  background-color: magenta;
+}
+/*# sourceMappingURL=SASS.css.map */

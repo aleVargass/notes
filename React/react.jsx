@@ -36,7 +36,7 @@ const JSX = <h1>Hello JSX!</h1>;
 // Complex JSX Element
 // JSX elements written as siblings with no parent wrapper element will not transpile
 // Valid JSX, parentheses not necessary
-const JSX = (
+const JSX2 = (
 <div> 
   <h1>Hola!</h1>
   <p>Mi lista de compra</p>
@@ -65,7 +65,7 @@ const JSX = (
 
 // Render HTML Elements to the DOM
 // Syntax: ReactDOM.render(componentToRender, targetNode)
-const JSX = (
+const JSX3 = (
   <div>
     <h1>Hello World</h1>
     <p>Lets render this to the DOM</p>
@@ -80,7 +80,7 @@ ReactDOM.render(JSX, document.getElementById('challenge-node'))
 // HTML Class in JSX
 // You can no longer use the word class to define HTML classes. JSX uses className.
 // The naming convention for all HTML attributes and event references in JSX become camelCase. onclick => onClick. 
-const JSX = <div className="myDiv">
+const JSX4 = <div className="myDiv">
 </div>;
 
 
@@ -89,7 +89,7 @@ const JSX = <div className="myDiv">
 
 // Self-Closing JSX Tags
 // All tags must be closed, the slash go first if has content
-const JSX = (
+const JSX5 = (
   <div>
     <h2>Welcome to React!</h2> <br />
     <p>Be sure to close all tags!</p>
@@ -179,7 +179,7 @@ const TypesOfFruit = () => {
   );
 };
 
-const Fruits = () => {
+const Fruits2 = () => {
   return (
     <div>
         <TypesOfFruit/>
@@ -351,7 +351,7 @@ class ToDo extends React.Component {
 // If you pass null it will remain null
 MyComponent.defaultProps = { location: 'San Francisco' }
 
-const ShoppingCart = (props) => {
+const ShoppingCart2 = (props) => {
   return (
     <div>
       <h1>Shopping Cart Component</h1>
@@ -359,7 +359,7 @@ const ShoppingCart = (props) => {
   )
 };
 
-ShoppingCart.defaultProps = {items: 0}
+ShoppingCart2.defaultProps = {items: 0}
 
 
 
@@ -470,13 +470,13 @@ class CampSite extends React.Component {
   }
 };
 
-const Camper = (props) => {
+const Camper2 = (props) => {
   return (
     <p>{props.name}</p>
   )
 }
-Camper.defaultProps = {name:'CamperBot'}
-Camper.propTypes = {name: PropTypes.string.isRequired}
+Camper2.defaultProps = {name:'CamperBot'}
+Camper2.propTypes = {name: PropTypes.string.isRequired}
 
 //no functional component
 class CampSite extends React.Component {
@@ -1200,7 +1200,7 @@ class MyComponent extends React.Component {
  * if/else statements can't be inserted directly into JSX code
  * Ternary expressions can be an excellent alternative if you want to implement conditional logic within your JSX.
  */
-const inputStyle = {
+const inputStyle2 = {
   width: 235,
   margin: 5
 };
