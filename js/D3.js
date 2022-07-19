@@ -7,15 +7,9 @@ d3.select("body")
 .text("Learning D3")
 
 
-
-
-
 // selectAll() - return an array of HTMLNodes
 d3.selectAll("li")
 .text("list item")
-
-
-
 
 
 // Work with data in D3
@@ -31,12 +25,7 @@ d3.select("body").selectAll("h2")
 .text("New Title")
 
 
-
-
-
 //  Dymaic Data in D3
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
 d3.select("body").selectAll("h2")
   .data(dataset)
   .enter()
@@ -44,12 +33,7 @@ d3.select("body").selectAll("h2")
   .text(dollar => dollar + " USD");
 
 
-
-
-
 // Inline Styles
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
 d3.select("body").selectAll("h2")
   .data(dataset)
   .enter()
@@ -58,12 +42,7 @@ d3.select("body").selectAll("h2")
   .style("font-family","verdana")
 
 
-
-
-
 // Change styles based on data
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
 d3.select("body").selectAll("h2")
   .data(dataset)
   .enter()
@@ -75,12 +54,7 @@ d3.select("body").selectAll("h2")
   })
 
 
-
-
-
 // Add Classes
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
 d3.select("body").selectAll("div")
   .data(dataset)
   .enter()
@@ -88,21 +62,13 @@ d3.select("body").selectAll("div")
   .attr("class", "bar")
 
 
-
-
-
 // Update the height of an element dynamically
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
 d3.select("body").selectAll("div")
   .data(dataset)
   .enter()
   .append("div")
   .attr("class", "bar")
   .style("height", d => d + "px")
-
-
-
 
 
 // Change the presentation of a bar chart
@@ -113,17 +79,12 @@ d3.select("body").selectAll("div")
 //   display: inline-block;
 //   background-color: blue;
 // }
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
 d3.select("body").selectAll("div")
   .data(dataset)
   .enter()
   .append("div")
   .attr("class", "bar")
   .style("height", (d) => (d*10 + "px")) 
-
-
-
 
 
 // SVG - scalable vector graphics, attr() do not have units, will always have a 5:1 ratio
@@ -136,38 +97,24 @@ const svg = d3.select("body")
   .attr("height", h)
 
 
-
-
-
 // Display shapes with SVG
 //  origin point(0,0)
-const w = 500;
-const h = 100;
-
-const svg = d3.select("body")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h)
-              .append("rect")
-              .attr("width", 25)
-              .attr("height", 100)
-              .attr("x", 0)
-              .attr("y", 0)
-
-
-
+svg = d3.select("body")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h)
+  .append("rect")
+  .attr("width", 25)
+  .attr("height", 100)
+  .attr("x", 0)
+  .attr("y", 0)
 
 
 // Create a bar for each data point in the set
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-const w = 500;
-const h = 100;
-
-const svg = d3.select("body")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h);
+svg = d3.select("body")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h);
 
 svg.selectAll("rect")
   .data(dataset)
@@ -179,20 +126,12 @@ svg.selectAll("rect")
   .attr("height", 100);
 
 
-
-
-
 // Dinamically set the coords for each bar
 //  i - index of the data point in the array
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-const w = 500;
-const h = 100;
-
-const svg = d3.select("body")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h);
+svg = d3.select("body")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h);
 
 svg.selectAll("rect")
    .data(dataset)
@@ -206,19 +145,11 @@ svg.selectAll("rect")
    .attr("height", 100);
 
 
-
-
-
 // Dinamically change the height of each bar
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-const w = 500;
-const h = 100;
-
-const svg = d3.select("body")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h);
+svg = d3.select("body")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h);
 
 svg.selectAll("rect")
    .data(dataset)
@@ -230,19 +161,11 @@ svg.selectAll("rect")
    .attr("height", (d, i) => d*3);
 
 
-
-
-
 // Invert svg elements
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-const w = 500;
-const h = 100;
-
-const svg = d3.select("body")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h);
+svg = d3.select("body")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h);
 
 svg.selectAll("rect")
   .data(dataset)
@@ -254,16 +177,8 @@ svg.selectAll("rect")
   .attr("height", (d, i) => 3 * d);
 
 
-
-
-
 //change the color of an svg
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-const w = 500;
-const h = 100;
-
-const svg = d3.select("body")
+svg = d3.select("body")
               .append("svg")
               .attr("width", w)
               .attr("height", h);
@@ -279,19 +194,11 @@ svg.selectAll("rect")
     .attr("fill","navy")
 
 
-
-
-
 // Add labels to d3 elements
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-const w = 500;
-const h = 100;
-
-const svg = d3.select("body")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h);
+svg = d3.select("body")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h);
 
 svg.selectAll("rect")
    .data(dataset)
@@ -312,20 +219,12 @@ svg.selectAll("text")
     .text(d => d)
 
 
-
-
-
 // style D3 labels
 //  fill because is svg
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-const w = 500;
-const h = 100;
-
-const svg = d3.select("body")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h);
+svg = d3.select("body")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h);
 
 svg.selectAll("rect")
    .data(dataset)
@@ -348,56 +247,41 @@ svg.selectAll("text")
     .style("fill","red")
 
 
-
-
-
 // Add a hover effect
 // .bar:hover {
   // fill: brown;
 // }
-    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
 
-    const w = 500;
-    const h = 100;
+svg = d3.select("body")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h);
 
-    const svg = d3.select("body")
-                  .append("svg")
-                  .attr("width", w)
-                  .attr("height", h);
+svg.selectAll("rect")
+    .data(dataset)
+    .enter()
+    .append("rect")
+    .attr("x", (d, i) => i * 30)
+    .attr("y", (d, i) => h - 3 * d)
+    .attr("width", 25)
+    .attr("height", (d, i) => 3 * d)
+    .attr("fill", "navy")
+    .attr("class","bar")
 
-    svg.selectAll("rect")
-       .data(dataset)
-       .enter()
-       .append("rect")
-       .attr("x", (d, i) => i * 30)
-       .attr("y", (d, i) => h - 3 * d)
-       .attr("width", 25)
-       .attr("height", (d, i) => 3 * d)
-       .attr("fill", "navy")
-        .attr("class","bar")
-
-    svg.selectAll("text")
-       .data(dataset)
-       .enter()
-       .append("text")
-       .text((d) => d)
-       .attr("x", (d, i) => i * 30)
-       .attr("y", (d, i) => h - (3 * d) - 3);
-
-
-
+svg.selectAll("text")
+    .data(dataset)
+    .enter()
+    .append("text")
+    .text((d) => d)
+    .attr("x", (d, i) => i * 30)
+    .attr("y", (d, i) => h - (3 * d) - 3);
 
 
 // Add a tooltip 
-const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-const w = 500;
-const h = 100;
-
-const svg = d3.select("body")
-              .append("svg")
-              .attr("width", w)
-              .attr("height", h);
+svg = d3.select("body")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h);
 
 svg.selectAll("rect")
    .data(dataset)
@@ -421,11 +305,8 @@ svg.selectAll("text")
    .attr("y", (d, i) => h - (d * 3 + 3))
 
 
-
-
-
 // Create a scatterplot with SVG circles
-const dataset = [
+dataset = [
   [ 34,    78 ],
   [ 109,   280 ],
   [ 310,   120 ],
@@ -438,11 +319,7 @@ const dataset = [
   [ 21,    123 ]
 ];
 
-
-const w = 500;
-const h = 500;
-
-const svg = d3.select("body")
+svg = d3.select("body")
   .append("svg")
   .attr("width", w)
   .attr("height", h);
@@ -453,11 +330,8 @@ svg.selectAll("circle")
 .append("circle")
 
 
-
-
-
 // Add attr() to the circle elements
-const dataset = [
+dataset = [
   [ 34,    78 ],
   [ 109,   280 ],
   [ 310,   120 ],
@@ -470,11 +344,7 @@ const dataset = [
   [ 21,    123 ]
 ];
 
-
-const w = 500;
-const h = 500;
-
-const svg = d3.select("body")
+svg = d3.select("body")
   .append("svg")
   .attr("width", w)
   .attr("height", h);
@@ -488,11 +358,8 @@ svg.selectAll("circle")
 .attr("r", 5)
 
 
-
-
-
 // Add labels to scatter plot circles
-const dataset = [
+dataset = [
   [ 34,    78 ],
   [ 109,   280 ],
   [ 310,   120 ],
@@ -505,11 +372,7 @@ const dataset = [
   [ 21,    123 ]
 ];
 
-
-const w = 500;
-const h = 500;
-
-const svg = d3.select("body")
+svg = d3.select("body")
   .append("svg")
   .attr("width", w)
   .attr("height", h);
@@ -531,9 +394,6 @@ svg.selectAll("text")
 .text(d => `${d[0]}, ${d[1]}`)
 
 
-
-
-
 // Create a linaer scale
 //  uses identity relationship
 const scale = d3.scaleLinear(); 
@@ -544,41 +404,33 @@ d3.select("body")
   .text(output);
 
 
-
-
-
 // Set a domain and a range on a scale
 //  domain(arr) - the values ranging of dataset, input information for a scale 
 //  range(arr) - x axis of the SVG canvas, output
-const scale = d3.scaleLinear();
+scale = d3.scaleLinear();
 scale.domain([250, 500])
 .range([10,150])
 
-const output = scale(50);
+output = scale(50);
 d3.select("body")
   .append("h2")
   .text(output);
-
-
-
 
 
 // d3.max() and d3.min()
 //  to avoid erros
 //  you'll want use it to the domain
 const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
-const output = d3.max(positionData, d => d[2]); 
+output = d3.max(positionData, d => d[2]); 
 
 d3.select("body")
   .append("h2")
   .text(output)
 
 
-
-
-
 // Use dinamyc scales
-const dataset = [
+{
+dataset = [
   [ 34,    78 ],
   [ 109,   280 ],
   [ 310,   120 ],
@@ -606,12 +458,11 @@ const output = yScale(411);
 d3.select("body")
 .append("h2")
 .text(output)
-
-
-
+}
 
 
 // Use predifined scale to place elements
+{
 const dataset = [
   [ 34,     78 ],
   [ 109,   280 ],
@@ -657,12 +508,11 @@ svg.selectAll("text")
 .text((d) =>  (d[0] + ", " + d[1]))
 .attr("x", d => xScale(d[0] + 10) )
 .attr("y", d => yScale(d[1]))
-
-
-
+}
 
 
 // Add axes to a visualization
+{
 const dataset = [
   [ 34,     78 ],
   [ 109,   280 ],
@@ -714,3 +564,4 @@ svg.append("g")
 svg.append("g")
 .attr("transform", "translate("+ padding +", 0)")
 .call(yAxis)
+}
