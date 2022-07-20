@@ -1,39 +1,37 @@
-// Add Document Elements
-// select(nameElement:HTMLNode) - select the first element from the document
-// append(nameElement:handleNode) - appends an HTMLNode to a selected item
-// text(string:string) - sets the text of the selected node or gets the current text
-d3.select("body")
-.append("h1")
-.text("Learning D3")
+// select(),  append(), text()
+d3.select("body") // select(element) => HTMLNode - select the first element in the document
+.append("h1") // append(element) => handleNode - appends an HTMLNode to a selected item
+.text("Learning D3"); // text(string) => string - sets the text of the selected node or gets the current text
 
 
-// selectAll() - return an array of HTMLNodes
-d3.selectAll("li")
-.text("list item")
+
+// selectAll(element) => [HTMLNodes]
+d3.selectAll("li") 
+.text("list item");
 
 
-// Work with data in D3
-//  data() - is used on a selection of DOM elements to attach the data to those elements
-//  enter() - create a new element in the document for each piece of data in the set
-//  
+
+// data(), enter()
 const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-d3.select("body").selectAll("h2")
-.data(dataset)
-.enter()
+d3.select("body").selectAll("h2") // => An empty selection
+.data(dataset) // Attach the data to those elements
+.enter() //  create a new element in the document for each piece of data in the set
+// if there are fewer elements than data items, it creates the missing elements
 .append("h2")
-.text("New Title")
+.text("New Title");
 
 
-//  Dymaic Data in D3
+
+// text(d => d)
 d3.select("body").selectAll("h2")
   .data(dataset)
   .enter()
   .append("h2")
-  .text(dollar => dollar + " USD");
+  .text(dollar => dollar+" USD");
 
 
-// Inline Styles
+
+// style("key", "value")
 d3.select("body").selectAll("h2")
   .data(dataset)
   .enter()
@@ -42,19 +40,18 @@ d3.select("body").selectAll("h2")
   .style("font-family","verdana")
 
 
-// Change styles based on data
+
+// style("key", d => d)
 d3.select("body").selectAll("h2")
   .data(dataset)
   .enter()
   .append("h2")
   .text((d) => (d + " USD"))
-  .style("color", d => {
-    if (d < 20) return "red"
-    return "green"
-  })
+  .style("color", d => d < 20 ? "red" : "green")
 
 
-// Add Classes
+
+// attr("key", "value")
 d3.select("body").selectAll("div")
   .data(dataset)
   .enter()
@@ -62,6 +59,7 @@ d3.select("body").selectAll("div")
   .attr("class", "bar")
 
 
+  
 // Update the height of an element dynamically
 d3.select("body").selectAll("div")
   .data(dataset)
