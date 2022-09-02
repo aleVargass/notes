@@ -333,12 +333,12 @@ const dataset = [
   [ 21,    123 ]
 ];
 
-svg = d3.select("body")
+svgContainer = d3.select("body")
   .append("svg")
   .attr("width", w)
   .attr("height", h);
 
-svg.selectAll("circle")
+svgContainer.selectAll("circle")
   .data(dataset)
   .enter()
   .append("circle")
@@ -360,12 +360,12 @@ const dataset = [
   [ 21,    123 ]
 ];
 
-svg = d3.select("body")
+svgContainer = d3.select("body")
   .append("svg")
   .attr("width", w)
   .attr("height", h);
 
-svg.selectAll("circle")
+svgContainer.selectAll("circle")
 .data(dataset)
 .enter()
 .append("circle")
@@ -390,12 +390,12 @@ const dataset = [
   [ 21,    123 ]
 ];
 
-svg = d3.select("body")
+svgContainer = d3.select("body")
   .append("svg")
   .attr("width", w)
   .attr("height", h);
 
-svg.selectAll("circle")
+svgContainer.selectAll("circle")
 .data(dataset)
 .enter()
 .append("circle")
@@ -403,7 +403,7 @@ svg.selectAll("circle")
 .attr("cy", (d, i) => h - d[1])
 .attr("r", 5);
 
-svg.selectAll("text")
+svgContainer.selectAll("text")
 .data(dataset)
 .enter()
 .append("text")
